@@ -232,10 +232,10 @@ const VideoCarousel = () => {
             alt={isLastVideo ? "replay" : !isPlaying ? "play" : "pause"}
             onClick={
               isLastVideo
-                ? () => handleProcess("video-reset")
+                ? () => handleProcess("video-reset", 0)
                 : !isPlaying
-                ? () => handleProcess("play")
-                : () => handleProcess("pause")
+                ? () => handleProcess("play", 0)
+                : () => handleProcess("pause", 0)
             }
           />
         </button>
