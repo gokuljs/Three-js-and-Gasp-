@@ -130,13 +130,11 @@ const VideoCarousel = () => {
   // vd id is the id for every video until id becomes number 3
   const handleProcess = (
     type: "video-end" | "video-last" | "video-reset" | "pause" | "play",
-    i?: number
+    i: number
   ) => {
     switch (type) {
       case "video-end":
-        i &&
-          i > -1 &&
-          setVideo((pre) => ({ ...pre, isEnd: true, videoId: i + 1 }));
+        setVideo((pre) => ({ ...pre, isEnd: true, videoId: i + 1 }));
         break;
 
       case "video-last":
@@ -185,7 +183,7 @@ const VideoCarousel = () => {
                   onEnded={() =>
                     i !== 3
                       ? handleProcess("video-end", i)
-                      : handleProcess("video-last")
+                      : handleProcess("video-last", i)
                   }
                   onPlay={() =>
                     setVideo((pre) => ({ ...pre, isPlaying: true }))
