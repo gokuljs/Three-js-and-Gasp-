@@ -16,7 +16,8 @@ export function Model(props: any) {
         material[0] !== "jlzuBkUzuJqgiAK" &&
         material[0] !== "xNrofRCqOXXHVZt"
       ) {
-        material[1].color = new THREE.Color(props.item.color[0]);
+        const customMaterial = material[1] as THREE.MeshStandardMaterial;
+        customMaterial.color = new THREE.Color(props.item.color[0]);
       }
       material[1].needsUpdate = true;
     });
@@ -134,7 +135,10 @@ export function Model(props: any) {
         geometry={(nodes.xXDHkMplTIDAXLN as THREE.Mesh).geometry}
         material={materials.pIJKfZsazmcpEiU}
         scale={0.01}
-      />
+      >
+        <meshStandardMaterial roughness={1} map={texture as any} />
+      </mesh>
+
       <mesh
         castShadow
         receiveShadow

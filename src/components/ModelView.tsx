@@ -3,6 +3,7 @@ import * as THREE from "three";
 import { View, PerspectiveCamera, OrbitControls } from "@react-three/drei";
 import Lights from "./Lights";
 import Iphone from "./Iphone";
+import Loader from "./Loader";
 
 interface ModelViewProps {
   index: number;
@@ -51,7 +52,7 @@ const ModelView: React.FC<ModelViewProps> = ({
         name={`${index === 1 ? "small" : "large"}`}
         position={[0, 0, 0]}
       >
-        <Suspense fallback={<>loading ....</>}>
+        <Suspense fallback={<Loader />}>
           <Iphone
             scale={index === 1 ? [15, 15, 15] : [17, 17, 17]}
             item={item}

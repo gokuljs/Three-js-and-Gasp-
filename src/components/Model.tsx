@@ -1,7 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ModelView from "./ModelView";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { yellowImg } from "../utils";
 import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
@@ -33,6 +33,14 @@ const Model = () => {
   // rotations
   const [smallRotations, setSmallRotations] = useState(0);
   const [largeRotations, setLargeRotations] = useState(0);
+
+  const tl = gsap.timeline();
+  useEffect(() => {
+    if (size === "large") {
+    }
+    if (size === "small") {
+    }
+  }, []);
 
   return (
     <section className="common-padding">
