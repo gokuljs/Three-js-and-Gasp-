@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Dispatch, Suspense } from "react";
 import * as THREE from "three";
 import { View, PerspectiveCamera, OrbitControls } from "@react-three/drei";
 import Lights from "./Lights";
@@ -10,7 +10,7 @@ interface ModelViewProps {
   groupRef: React.MutableRefObject<THREE.Group<THREE.Object3DEventMap>>;
   gsapType: string;
   controlRef: React.MutableRefObject<any>;
-  setRotation: React.Dispatch<React.SetStateAction<number>>;
+  setRotation: Dispatch<number>;
   item: {
     title: string;
     color: string[];

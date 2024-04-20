@@ -66,7 +66,7 @@ const Model = () => {
               groupRef={small}
               gsapType="view1"
               controlRef={cameraControlSmall}
-              setRotationState={setSmallRotation}
+              setRotation={setSmallRotation}
               item={model}
               size={size}
             />
@@ -76,7 +76,7 @@ const Model = () => {
               groupRef={large}
               gsapType="view2"
               controlRef={cameraControlLarge}
-              setRotationState={setLargeRotation}
+              setRotation={setLargeRotation}
               item={model}
               size={size}
             />
@@ -91,7 +91,7 @@ const Model = () => {
                 right: 0,
                 overflow: "hidden",
               }}
-              eventSource={document.getElementById("root")}
+              eventSource={document.getElementById("root") as HTMLElement}
             >
               <View.Port />
             </Canvas>
